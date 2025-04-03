@@ -1,0 +1,267 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: hsl(0, 0%, 0%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #218838;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Add near the top of your file */
+* {
+  box-sizing: border-box;
+}
+
+input {
+  width: 60%;
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none; /* Remove default focus outline */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  filter: drop-shadow(10px 0 10px #218838);
+}
+
+.not-found {
+  color: white;
+  text-align: center;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipe-card {
+  min-height: auto;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: 100%;
+}
+
+.recipe-card .details {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ingredients ul, .instructions ol {
+  margin: 0;
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+.ingredients li, .instructions li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .recipes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipes {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  .recipe-card {
+    max-width: 100%;
+  }
+}
+
+.recipe-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card .details {
+  padding: 10px;
+  text-align: left;
+}
+
+.recipe-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.recipe-card button {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 5px 5px;
+}
+
+.recipe-card button:hover {
+  background-color: #218838;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.favorites-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff0000;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  padding: 0;
+  color: white;
+  border: none;
+}
+
+.favorites-btn:hover {
+  background-color: #e60000;
+  color: white;
+  filter: none;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.favorites-btn i {
+  transition: all 0.25s;
+  color: white;
+}
+
+.favorites-btn:hover i {
+  color: white;
+}
+
+.favorites-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.favorites-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-section li:hover {
+  background-color: #f8f9fa;
+  padding-left: 15px;
+}
+
+.favorites-section .recipe-title {
+  flex-grow: 1;
+  color: #218838;
+  text-decoration: none;
+}
+
+.favorites-section .recipe-title:hover {
+  color: #28a745;
+}
+
+.close-favorites {
+  margin-top: 20px;
+  background-color: #dc3545;
+}
+
+.recipe-card {
+  min-height: auto;
+  padding-bottom: 20px;
+}
+
+.ingredients, .instructions {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.ingredients ul, .instructions ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.ingredients li, .instructions li {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.details h4 {
+  color: #28a745;
+  margin: 10px 0 5px 0;
+}
